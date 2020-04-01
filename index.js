@@ -19,6 +19,10 @@ const users = [
     }
 ];
 
+const message = {
+    message: "Hello, world!"
+}
+
 const goodGuys = [
     {
         "heroName": "Super Strongman",
@@ -73,7 +77,7 @@ app.listen(port, () => {
 });
 
 app.get('/', (req, res) => {
-    res.json('{"message": "Hello, World!"}');
+    res.json(message);
 });
 
 app.post('/login', (req, res) => {
