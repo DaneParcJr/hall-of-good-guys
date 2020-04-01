@@ -80,7 +80,7 @@ app.get('/', (req, res) => {
     res.json(message);
 });
 
-app.post('/login', (req, res) => {
+app.post('/v1/login', (req, res) => {
     const { username, password } = req.body;
     const user = users.find(u => { return u.username === username && u.password === password });
     if (user) {
@@ -93,18 +93,18 @@ app.post('/login', (req, res) => {
     }
 });
 
-app.get('/goodguys', authenticateJWT, (req, res) => {
+app.get('/v1/goodguys', authenticateJWT, (req, res) => {
     res.json(goodGuys);
 });
 
-app.get('/goodguys/1', authenticateJWT, (req, res) => {
+app.get('/v1/goodguys/1', authenticateJWT, (req, res) => {
     res.json(goodGuys[1]);
 });
 
-app.get('/goodguys/3', authenticateJWT, (req, res) => {
+app.get('/v1/goodguys/3', authenticateJWT, (req, res) => {
     res.json(goodGuys[3]);
 });
 
-app.get('/goodguys/5', authenticateJWT, (req, res) => {
+app.get('/v1/goodguys/5', authenticateJWT, (req, res) => {
     res.json(goodGuys[5]);
 });
