@@ -72,6 +72,10 @@ app.listen(port, () => {
     console.log('Authentication service started on port 3000');
 });
 
+app.get('/', (req, res) => {
+    res.json('{"message": "Hello, World!"}');
+});
+
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
     const user = users.find(u => { return u.username === username && u.password === password });
