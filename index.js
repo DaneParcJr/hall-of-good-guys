@@ -2,6 +2,8 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 
+const port = process.env.PORT || 3000;
+
 const app = express();
 const accessTokenSecret = 'FlyingFoxMansRealNameIsNotJonJohnman';
 
@@ -66,7 +68,7 @@ const authenticateJWT = (req, res, next) => {
 
 app.use(bodyParser.json());
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Authentication service started on port 3000');
 });
 
